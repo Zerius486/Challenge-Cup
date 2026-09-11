@@ -1,0 +1,16 @@
+/build/
+/output/firmware/*
+!/output/firmware/.gitkeep
+/output/standalone_tests/*
+!/output/standalone_tests/.gitkeep
+/tmp/
+__pycache__/
+*.pyc
+
+# Local IDE and OS metadata
+.vs/
+.vscode/
+*.user
+*.suo
+*.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "firmware-debug",
+      "displayName": "STM32F407 debug firmware",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/main-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake"
+      }
+    },
+    {
+      "name": "firmware-release",
+      "displayName": "STM32F407 release firmware",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/main-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake"
+      }
+    }
+  ],
+  "buildPresets": [
+    {"name": "firmware-debug", "configurePreset": "firmware-debug"},
+    {"name": "firmware-release", "configurePreset": "firmware-release"}
+  ]
+}

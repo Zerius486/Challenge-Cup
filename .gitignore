@@ -30,9 +30,6 @@ Reference/Board/Examples/**/*.sct
 Reference/Board/Examples/**/*.uvoptx
 Reference/Board/Examples/**/*.uvguix*
 
-# Local full vendor dump: useful files are copied into Reference/Board
-/启明欣欣STM32F407(高配版V6.1)学习资料/
-
 # IDE and operating-system metadata
 .vs/
 .vscode/

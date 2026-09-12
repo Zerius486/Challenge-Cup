@@ -9,6 +9,6 @@
 | `ForceSensor` | 六维力传感器 RS485 协议 |
 | `Chassis` | 履带底盘与 NUC UDP 通讯协议 |
 | `UWV_Example` | UWV 例程压缩包及解压后的借鉴代码 |
-| `Board` | 启明欣欣开发板原理图和商家资料（当前仅保留目录说明） |
+| `Board` | 启明欣欣 STM32F407 V6.1 原理图、板级手册和筛选后的外设例程 |
 
 参考资料中的代码只用于查阅和移植，实际引脚、时钟和通信参数以 `MainCode/Config/ChallengeCup_Main.ioc` 与 `MainCode/docs/` 为准。

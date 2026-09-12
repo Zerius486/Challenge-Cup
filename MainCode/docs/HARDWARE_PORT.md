@@ -7,7 +7,8 @@
 - MCU HSE：8 MHz 晶振
 - Ethernet PHY：LAN8720A 独立 25 MHz 晶振，输出 50 MHz RMII REF_CLK
 - 系统时钟：168 MHz
-- 原理图来源：工作区 `../../Reference/Board/`（当前交付包未附入原理图文件；补入商家资料时请保持该目录名）
+- 原理图来源：[`../../Reference/Board/Schematic/Board_Schematic_V6.1.pdf`](../../Reference/Board/Schematic/Board_Schematic_V6.1.pdf)
+- 相关板级手册：[`../../Reference/Board/Documentation/Board_Example_Manual_V6.1.pdf`](../../Reference/Board/Documentation/Board_Example_Manual_V6.1.pdf)
 
 ## 引脚表
 

@@ -44,7 +44,7 @@
 - [CubeMX 配置说明](docs/CUBEMX_CONFIGURATION.md)
 - [可导入的 CubeMX 配置](Config/ChallengeCup_Main.ioc)
 - [VOFA+ FireWater 回传](docs/VOFA_FIREWATER.md)
-- [独立测试 ELF 说明](Projects/ModuleTests/README.md)
+- [模块测试固件说明](Projects/ModuleTests/README.md)
 
 ## 安全默认值
 
@@ -71,7 +71,7 @@ powershell -ExecutionPolicy Bypass -File .\tools\build_firmware.ps1 -Configurati
 - `ChallengeCup_Main.bin`
 - `ChallengeCup_Main.map`
 
-## 四个独立测试工程
+## 四个模块测试工程
 
 `Projects/ModuleTests/` 提供四个可分别构建和烧录的最小测试固件：eRob 单电机、RobStride 单电机、六维力传感器和 UDP 回显通讯。两个电机工程默认只读反馈，不会使能或移动电机。
 

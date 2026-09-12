@@ -1,10 +1,3 @@
-# CMake/Ninja build trees and generated firmware outputs
-/MainCode/build/
-/MainCode/output/firmware/*
-!/MainCode/output/firmware/.gitkeep
-/MainCode/output/standalone_tests/*
-!/MainCode/output/standalone_tests/.gitkeep
-
 # Temporary files and host-test caches
 /tmp/
 **/__pycache__/

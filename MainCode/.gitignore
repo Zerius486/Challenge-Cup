@@ -1,8 +1,4 @@
 /build/
-/output/firmware/*
-!/output/firmware/.gitkeep
-/output/standalone_tests/*
-!/output/standalone_tests/.gitkeep
 /tmp/
 __pycache__/
 *.pyc

@@ -1,6 +1,6 @@
 # 模块测试固件说明
 
-这里放置四个可以单独烧录的 STM32 测试工程。每个工程只验证一个硬件模块，便于在接入主工程前定位接线、供电、总线和协议问题。测试固件默认处于诊断模式：不会使能或移动电机，也不会执行机械臂动作。
+这里放置六个可以单独烧录的 STM32 测试工程。每个工程只验证一个硬件模块，便于在接入主工程前定位接线、供电、总线和协议问题。测试固件默认处于诊断模式：不会使能或移动电机，也不会执行机械臂动作。
 
 烧录前统一要求：断开电机动力电源，确认控制器和外设共地，准备硬件急停；只有对应模块的接线和只读反馈确认正常后，才允许打开动作测试开关。
 
@@ -14,6 +14,8 @@
 | 六维力传感器 | `force_sensor/Force_Sensor_Test.hex` | USART6 + 外置 RS485，每 100 ms 请求一帧六维数据 | 六个浮点值持续更新；断开再恢复传感器后接收仍能恢复 |
 | eRob 电机 | `erob_motor/eRob_Motor_Test.hex` | CAN1 每 100 ms 读取节点状态字 `0x6041` | 收到合法状态字，CiA 402 状态正确，LED1 翻转；默认不使能、不移动 |
 | RobStride 电机 | `robstride_motor/RobStride_Motor_Test.hex` | CAN2 每 200 ms 轮询位置、速度、Iq 和母线电压 | 收到与型号匹配的参数回复和反馈；默认不使能、不移动 |
+| UART 通讯 | `uart_communication/UART_Communication_Test.hex` | USART6 每 500 ms 发送测试行，并通过 DMA 接收回环/对端数据 | TX 计数和 RX 行计数持续增加；断开回环后报错，恢复后可继续接收 |
+| CAN 通讯 | `can_communication/CAN_Communication_Test.hex` | CAN1/CAN2 每 100 ms 发送标准测试帧并接收对端帧 | 选择的总线收发计数持续增加，ID/DLC/数据正确，CAN 错误为 0 |
 
 ## 构建
 
@@ -30,6 +32,8 @@ powershell -ExecutionPolicy Bypass -File .\tools\build_standalone_tests.ps1 -Pro
 powershell -ExecutionPolicy Bypass -File .\tools\build_standalone_tests.ps1 -Project Force
 powershell -ExecutionPolicy Bypass -File .\tools\build_standalone_tests.ps1 -Project eRob
 powershell -ExecutionPolicy Bypass -File .\tools\build_standalone_tests.ps1 -Project RobStride
+powershell -ExecutionPolicy Bypass -File .\tools\build_standalone_tests.ps1 -Project UART
+powershell -ExecutionPolicy Bypass -File .\tools\build_standalone_tests.ps1 -Project CAN
 ```
 
 默认生成 Release 版本；需要调试符号时增加 `-Configuration Debug`。
@@ -47,10 +51,12 @@ powershell -ExecutionPolicy Bypass -File .\tools\flash_firmware.ps1 `
 
 ## 推荐测试顺序
 
-1. **UDP**：先验证开发板启动、PHY 链路和网络配置。
-2. **力传感器**：确认 RS485 方向控制、波特率、帧解析和错误恢复。
-3. **eRob**：确认 CAN1、节点 ID、终端电阻和状态字，再考虑一次性小范围位置动作。
-4. **RobStride**：确认 CAN2、准确型号、节点 ID 和反馈模式，再考虑一次性小电流动作。
+1. **UART**：先验证 USART6、TTL/RS485 电平和 DMA 收发。
+2. **CAN**：用 USB-CAN 或第二节点验证两路 CAN 控制器、收发器和终端。
+3. **UDP**：验证开发板启动、PHY 链路和网络配置。
+4. **力传感器**：确认 RS485 方向控制、波特率、帧解析和错误恢复。
+5. **eRob**：确认 CAN1、节点 ID、终端电阻和状态字，再考虑一次性小范围位置动作。
+6. **RobStride**：确认 CAN2、准确型号、节点 ID 和反馈模式，再考虑一次性小电流动作。
 
 详细接线、观测变量和动作开关见各子目录 README：
 
@@ -58,6 +64,8 @@ powershell -ExecutionPolicy Bypass -File .\tools\flash_firmware.ps1 `
 - [六维力传感器测试](force_sensor/README.md)
 - [eRob 电机测试](erob_motor/README.md)
 - [RobStride 电机测试](robstride_motor/README.md)
+- [UART 通讯测试](uart_communication/README.md)
+- [CAN 通讯测试](can_communication/README.md)
 
 ## 动作测试规则
 

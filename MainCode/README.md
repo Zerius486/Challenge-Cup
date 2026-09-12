@@ -12,7 +12,7 @@
 | `Core/` | STM32 启动、板级初始化和主循环 |
 | `Config/` | CubeMX IOC 配置记录 |
 | `Drivers/`、`Middlewares/` | STM32 HAL/CMSIS、LAN8720A 和 lwIP |
-| `Projects/ModuleTests/` | eRob、RobStride、力传感器、UDP 四个独立测试工程 |
+| `Projects/ModuleTests/` | UART、CAN、UDP、eRob、RobStride、力传感器六个独立测试工程 |
 | `Tests/` | MinGW 主机协议和应用桥接测试 |
 | `docs/`、`TestGuides/` | 实现说明、接线说明和上板验收步骤 |
 | `tools/` | 构建、烧录和 UDP 调试脚本 |
@@ -71,9 +71,9 @@ powershell -ExecutionPolicy Bypass -File .\tools\build_firmware.ps1 -Configurati
 - `ChallengeCup_Main.bin`
 - `ChallengeCup_Main.map`
 
-## 四个模块测试工程
+## 六个模块测试工程
 
-`Projects/ModuleTests/` 提供四个可分别构建和烧录的最小测试固件：eRob 单电机、RobStride 单电机、六维力传感器和 UDP 回显通讯。两个电机工程默认只读反馈，不会使能或移动电机。
+`Projects/ModuleTests/` 提供六个可分别构建和烧录的最小测试固件：UART、CAN、UDP、eRob 单电机、RobStride 单电机和六维力传感器。两个电机工程默认只读反馈，不会使能或移动电机。
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\tools\build_standalone_tests.ps1

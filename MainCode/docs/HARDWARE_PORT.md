@@ -24,7 +24,7 @@
 | ETH PHY RESET | PE2 | 低有效，启动时拉低 2 ms 后释放并等待 50 ms |
 | CAN1 RX/TX | PD0/PD1 | 板载 TJA1050；默认分配给 eRob |
 | CAN2 RX/TX | PB12/PB13 | 板载 TJA1050；默认分配给 RobStride |
-| Force UART TX/RX | PC6/PC7 | USART6，460800 8N1；同时是板上 DCMI_D0/D1，不能再启用摄像头接口 |
+| USART6 UART TX/RX | PC6/PC7 | USART6，460800 8N1；主工程接六维力传感器，独立 UART 测试可做 TTL/RS485 回环；同时是板上 DCMI_D0/D1，不能再启用摄像头接口 |
 | Force RS485 DE/RE | PB0 | 高电平发送、低电平接收，接外置收发器的 DE 与 `/RE`；同时是 `T_CS`，不要插用触摸接口的屏 |
 | LED0/LED1/LED2 | PE3/PE4/PG9 | 低电平点亮：心跳/网络/故障 |
 | SWDIO/SWCLK | PA13/PA14 | 下载与调试 |

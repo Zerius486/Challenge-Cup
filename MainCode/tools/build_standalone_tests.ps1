@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('All', 'eRob', 'RobStride', 'Force', 'UDP')]
+    [ValidateSet('All', 'eRob', 'RobStride', 'Force', 'UDP', 'UART', 'CAN')]
     [string]$Project = 'All',
     [ValidateSet('Debug', 'Release')]
     [string]$Configuration = 'Release'
@@ -42,6 +42,16 @@ $allProjects = @(
         Selector = 'UDP'
         Directory = 'udp_communication'
         Artifact = 'UDP_Communication_Test'
+    }
+    [pscustomobject]@{
+        Selector = 'UART'
+        Directory = 'uart_communication'
+        Artifact = 'UART_Communication_Test'
+    }
+    [pscustomobject]@{
+        Selector = 'CAN'
+        Directory = 'can_communication'
+        Artifact = 'CAN_Communication_Test'
     }
 )
 

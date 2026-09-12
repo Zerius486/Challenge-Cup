@@ -20,7 +20,7 @@
 | --- | --- |
 | CAN1 | PD0 = RX，PD1 = TX，板载 TJA1050 |
 | CAN2 | PB12 = RX，PB13 = TX，板载 TJA1050 |
-| USART6 | PC6 = TX，PC7 = RX |
+| USART6 | PC6 = TX，PC7 = RX；可用于力传感器 RS485，也可运行独立 UART 回环测试 |
 | 板载 RS485 方向控制 | PG6，标号 `485_RE` |
 | 外接 RS485 方向控制 | `MainCode` 使用 PB0，同时连接 DE 和 `/RE` |
 | Ethernet RMII | PA1/PA2/PA7、PC1/PC4/PC5、PG11/PG13/PG14，PHY 为 LAN8720A |

@@ -11,7 +11,7 @@
 
 /* Keep at 0 until diagnostics and the independent emergency stop are proven. */
 #ifndef ROBSTRIDE_TEST_ENABLE_MOTION
-#define ROBSTRIDE_TEST_ENABLE_MOTION 0
+#define ROBSTRIDE_TEST_ENABLE_MOTION 1
 #endif
 
 /* Used only when ROBSTRIDE_TEST_ENABLE_MOTION is 1. */

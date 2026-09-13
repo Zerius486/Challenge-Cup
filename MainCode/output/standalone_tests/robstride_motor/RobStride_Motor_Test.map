@@ -144,6 +144,8 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
  .data          0x00000000        0x0 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
  .bss           0x00000000        0x0 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
+ .bss.g_robstride_target_position_rad
+                0x00000000        0x4 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
  .text          0x00000000        0x0 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
  .data          0x00000000        0x0 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
  .bss           0x00000000        0x0 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
@@ -908,7 +910,7 @@ LOAD C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x08000000                g_pfnVectors
                 0x08000188                        . = ALIGN (0x4)
 
-.text           0x08000188     0x2760
+.text           0x08000188     0x277c
                 0x08000188                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000188       0x40 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -1108,290 +1110,290 @@ LOAD C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x08000d30                udp_transport_queue_can_from_isr
  *fill*         0x08000d32        0x2 
  .text.app_bridge_on_can_frame
-                0x08000d34      0x114 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
+                0x08000d34      0x130 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
                 0x08000d34                app_bridge_on_can_frame
  .text.app_bridge_on_can_error
-                0x08000e48       0x1c CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
-                0x08000e48                app_bridge_on_can_error
+                0x08000e64       0x1c CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
+                0x08000e64                app_bridge_on_can_error
  .text.startup.main
-                0x08000e64       0xa0 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
-                0x08000e64                main
+                0x08000e80       0xa0 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
+                0x08000e80                main
  .text.codec_read_u32_le
-                0x08000f04        0x4 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
+                0x08000f20        0x4 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
  .text.make_simple
-                0x08000f08       0x2e CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
- *fill*         0x08000f36        0x2 
+                0x08000f24       0x2e CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
+ *fill*         0x08000f52        0x2 
  .text.robstride_limits
-                0x08000f38       0x14 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
-                0x08000f38                robstride_limits
+                0x08000f54       0x14 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
+                0x08000f54                robstride_limits
  .text.robstride_make_read_parameter
-                0x08000f4c       0x18 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
-                0x08000f4c                robstride_make_read_parameter
+                0x08000f68       0x18 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
+                0x08000f68                robstride_make_read_parameter
  .text.robstride_parse_feedback
-                0x08000f64      0x11c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
-                0x08000f64                robstride_parse_feedback
+                0x08000f80      0x11c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
+                0x08000f80                robstride_parse_feedback
  .text.robstride_parse_parameter_reply
-                0x08001080       0x70 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
-                0x08001080                robstride_parse_parameter_reply
+                0x0800109c       0x70 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
+                0x0800109c                robstride_parse_parameter_reply
  .text.robstride_parse_fault_reply
-                0x080010f0       0x4e CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
-                0x080010f0                robstride_parse_fault_reply
- *fill*         0x0800113e        0x2 
+                0x0800110c       0x4e CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
+                0x0800110c                robstride_parse_fault_reply
+ *fill*         0x0800115a        0x2 
  .text.HAL_InitTick
-                0x08001140       0x48 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08001140                HAL_InitTick
+                0x0800115c       0x48 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x0800115c                HAL_InitTick
  .text.HAL_Init
-                0x08001188       0x34 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08001188                HAL_Init
+                0x080011a4       0x34 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x080011a4                HAL_Init
  .text.HAL_IncTick
-                0x080011bc       0x18 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x080011bc                HAL_IncTick
+                0x080011d8       0x18 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x080011d8                HAL_IncTick
  .text.HAL_GetTick
-                0x080011d4        0xc CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x080011d4                HAL_GetTick
+                0x080011f0        0xc CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x080011f0                HAL_GetTick
  .text.HAL_GetREVID
-                0x080011e0        0xc CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x080011e0                HAL_GetREVID
+                0x080011fc        0xc CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x080011fc                HAL_GetREVID
  .text.HAL_CAN_Init
-                0x080011ec       0xf6 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x080011ec                HAL_CAN_Init
- *fill*         0x080012e2        0x2 
+                0x08001208       0xf6 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001208                HAL_CAN_Init
+ *fill*         0x080012fe        0x2 
  .text.HAL_CAN_ConfigFilter
-                0x080012e4      0x10c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x080012e4                HAL_CAN_ConfigFilter
+                0x08001300      0x10c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001300                HAL_CAN_ConfigFilter
  .text.HAL_CAN_Start
-                0x080013f0       0x56 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x080013f0                HAL_CAN_Start
+                0x0800140c       0x56 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x0800140c                HAL_CAN_Start
  .text.HAL_CAN_AddTxMessage
-                0x08001446       0x96 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001446                HAL_CAN_AddTxMessage
+                0x08001462       0x96 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001462                HAL_CAN_AddTxMessage
  .text.HAL_CAN_GetTxMailboxesFreeLevel
-                0x080014dc       0x28 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x080014dc                HAL_CAN_GetTxMailboxesFreeLevel
+                0x080014f8       0x28 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x080014f8                HAL_CAN_GetTxMailboxesFreeLevel
  .text.HAL_CAN_GetRxMessage
-                0x08001504       0xf8 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001504                HAL_CAN_GetRxMessage
+                0x08001520       0xf8 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001520                HAL_CAN_GetRxMessage
  .text.HAL_CAN_GetRxFifoFillLevel
-                0x080015fc       0x1e CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x080015fc                HAL_CAN_GetRxFifoFillLevel
+                0x08001618       0x1e CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001618                HAL_CAN_GetRxFifoFillLevel
  .text.HAL_CAN_ActivateNotification
-                0x0800161a       0x22 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x0800161a                HAL_CAN_ActivateNotification
+                0x08001636       0x22 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001636                HAL_CAN_ActivateNotification
  .text.HAL_CAN_TxMailbox0CompleteCallback
-                0x0800163c        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x0800163c                HAL_CAN_TxMailbox0CompleteCallback
+                0x08001658        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001658                HAL_CAN_TxMailbox0CompleteCallback
  .text.HAL_CAN_TxMailbox1CompleteCallback
-                0x0800163e        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x0800163e                HAL_CAN_TxMailbox1CompleteCallback
+                0x0800165a        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x0800165a                HAL_CAN_TxMailbox1CompleteCallback
  .text.HAL_CAN_TxMailbox2CompleteCallback
-                0x08001640        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001640                HAL_CAN_TxMailbox2CompleteCallback
+                0x0800165c        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x0800165c                HAL_CAN_TxMailbox2CompleteCallback
  .text.HAL_CAN_TxMailbox0AbortCallback
-                0x08001642        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001642                HAL_CAN_TxMailbox0AbortCallback
+                0x0800165e        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x0800165e                HAL_CAN_TxMailbox0AbortCallback
  .text.HAL_CAN_TxMailbox1AbortCallback
-                0x08001644        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001644                HAL_CAN_TxMailbox1AbortCallback
+                0x08001660        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001660                HAL_CAN_TxMailbox1AbortCallback
  .text.HAL_CAN_TxMailbox2AbortCallback
-                0x08001646        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001646                HAL_CAN_TxMailbox2AbortCallback
+                0x08001662        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001662                HAL_CAN_TxMailbox2AbortCallback
  .text.HAL_CAN_RxFifo0FullCallback
-                0x08001648        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001648                HAL_CAN_RxFifo0FullCallback
+                0x08001664        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001664                HAL_CAN_RxFifo0FullCallback
  .text.HAL_CAN_RxFifo1MsgPendingCallback
-                0x0800164a        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x0800164a                HAL_CAN_RxFifo1MsgPendingCallback
+                0x08001666        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001666                HAL_CAN_RxFifo1MsgPendingCallback
  .text.HAL_CAN_RxFifo1FullCallback
-                0x0800164c        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x0800164c                HAL_CAN_RxFifo1FullCallback
+                0x08001668        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001668                HAL_CAN_RxFifo1FullCallback
  .text.HAL_CAN_SleepCallback
-                0x0800164e        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x0800164e                HAL_CAN_SleepCallback
+                0x0800166a        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x0800166a                HAL_CAN_SleepCallback
  .text.HAL_CAN_WakeUpFromRxMsgCallback
-                0x08001650        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001650                HAL_CAN_WakeUpFromRxMsgCallback
+                0x0800166c        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x0800166c                HAL_CAN_WakeUpFromRxMsgCallback
  .text.HAL_CAN_IRQHandler
-                0x08001652      0x208 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001652                HAL_CAN_IRQHandler
+                0x0800166e      0x208 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x0800166e                HAL_CAN_IRQHandler
  .text.HAL_CAN_GetState
-                0x0800185a       0x26 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x0800185a                HAL_CAN_GetState
+                0x08001876       0x26 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x08001876                HAL_CAN_GetState
  .text.HAL_CAN_GetError
-                0x08001880        0x4 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
-                0x08001880                HAL_CAN_GetError
+                0x0800189c        0x4 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+                0x0800189c                HAL_CAN_GetError
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08001884       0x24 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08001884                HAL_NVIC_SetPriorityGrouping
+                0x080018a0       0x24 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x080018a0                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x080018a8       0x64 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x080018a8                HAL_NVIC_SetPriority
+                0x080018c4       0x64 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x080018c4                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x0800190c       0x1c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x0800190c                HAL_NVIC_EnableIRQ
+                0x08001928       0x1c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08001928                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x08001928       0x28 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08001928                HAL_SYSTICK_Config
+                0x08001944       0x28 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08001944                HAL_SYSTICK_Config
  .text.HAL_SYSTICK_Callback
-                0x08001950        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08001950                HAL_SYSTICK_Callback
+                0x0800196c        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x0800196c                HAL_SYSTICK_Callback
  .text.HAL_SYSTICK_IRQHandler
-                0x08001952        0x8 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08001952                HAL_SYSTICK_IRQHandler
- *fill*         0x0800195a        0x2 
+                0x0800196e        0x8 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x0800196e                HAL_SYSTICK_IRQHandler
+ *fill*         0x08001976        0x2 
  .text.DMA_CalcBaseAndBitshift
-                0x0800195c       0x2c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08001978       0x2c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.HAL_DMA_Init
-                0x08001988       0xfc CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x08001988                HAL_DMA_Init
+                0x080019a4       0xfc CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x080019a4                HAL_DMA_Init
  .text.HAL_DMA_Abort
-                0x08001a84       0x7c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x08001a84                HAL_DMA_Abort
+                0x08001aa0       0x7c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08001aa0                HAL_DMA_Abort
  .text.HAL_DMA_Abort_IT
-                0x08001b00       0x24 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x08001b00                HAL_DMA_Abort_IT
+                0x08001b1c       0x24 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08001b1c                HAL_DMA_Abort_IT
  .text.HAL_DMA_IRQHandler
-                0x08001b24      0x17c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x08001b24                HAL_DMA_IRQHandler
+                0x08001b40      0x17c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08001b40                HAL_DMA_IRQHandler
  .text.HAL_GPIO_Init
-                0x08001ca0      0x1b0 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x08001ca0                HAL_GPIO_Init
+                0x08001cbc      0x1b0 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x08001cbc                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x08001e50        0xa CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x08001e50                HAL_GPIO_WritePin
+                0x08001e6c        0xa CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x08001e6c                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x08001e5a       0x12 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x08001e5a                HAL_GPIO_TogglePin
+                0x08001e76       0x12 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x08001e76                HAL_GPIO_TogglePin
  .text.HAL_RCC_OscConfig
-                0x08001e6c      0x35c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08001e6c                HAL_RCC_OscConfig
+                0x08001e88      0x35c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x08001e88                HAL_RCC_OscConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x080021c8       0x5c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x080021c8                HAL_RCC_GetSysClockFreq
+                0x080021e4       0x5c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080021e4                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_ClockConfig
-                0x08002224      0x134 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08002224                HAL_RCC_ClockConfig
+                0x08002240      0x134 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x08002240                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetPCLK1Freq
-                0x08002358       0x20 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08002358                HAL_RCC_GetPCLK1Freq
+                0x08002374       0x20 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x08002374                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x08002378       0x20 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08002378                HAL_RCC_GetPCLK2Freq
+                0x08002394       0x20 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x08002394                HAL_RCC_GetPCLK2Freq
  .text.UART_EndRxTransfer
-                0x08002398       0x5c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x080023b4       0x5c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.UART_SetConfig
-                0x080023f4       0xbc CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x08002410       0xbc CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.HAL_UART_Init
-                0x080024b0       0x5e CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x080024b0                HAL_UART_Init
+                0x080024cc       0x5e CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x080024cc                HAL_UART_Init
  .text.HAL_UART_TxCpltCallback
-                0x0800250e        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x0800250e                HAL_UART_TxCpltCallback
+                0x0800252a        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800252a                HAL_UART_TxCpltCallback
  .text.HAL_UART_RxCpltCallback
-                0x08002510        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x08002510                HAL_UART_RxCpltCallback
+                0x0800252c        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800252c                HAL_UART_RxCpltCallback
  .text.UART_DMAAbortOnError
-                0x08002512        0xe CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800252e        0xe CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
  .text.HAL_UARTEx_RxEventCallback
-                0x08002520        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x08002520                HAL_UARTEx_RxEventCallback
+                0x0800253c        0x2 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x0800253c                HAL_UARTEx_RxEventCallback
  .text.UART_Receive_IT.isra.0
-                0x08002522       0xb4 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- *fill*         0x080025d6        0x2 
+                0x0800253e       0xb4 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ *fill*         0x080025f2        0x2 
  .text.HAL_UART_IRQHandler
-                0x080025d8      0x2a0 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
-                0x080025d8                HAL_UART_IRQHandler
- .text.memset   0x08002878       0x10 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
-                0x08002878                memset
+                0x080025f4      0x2a0 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+                0x080025f4                HAL_UART_IRQHandler
+ .text.memset   0x08002894       0x10 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+                0x08002894                memset
  .text.__libc_init_array
-                0x08002888       0x48 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
-                0x08002888                __libc_init_array
+                0x080028a4       0x48 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+                0x080028a4                __libc_init_array
  *(.glue_7)
- .glue_7        0x080028d0        0x0 linker stubs
+ .glue_7        0x080028ec        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080028d0        0x0 linker stubs
+ .glue_7t       0x080028ec        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x080028d0        0x0 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x080028ec        0x0 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x080028d0        0x4 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080028d0                _init
- .init          0x080028d4        0x8 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x080028ec        0x4 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080028ec                _init
+ .init          0x080028f0        0x8 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080028dc        0x4 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080028dc                _fini
- .fini          0x080028e0        0x8 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x080028e8                        . = ALIGN (0x4)
-                0x080028e8                        _etext = .
+ .fini          0x080028f8        0x4 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080028f8                _fini
+ .fini          0x080028fc        0x8 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08002904                        . = ALIGN (0x4)
+                0x08002904                        _etext = .
 
-.vfp11_veneer   0x080028e8        0x0
- .vfp11_veneer  0x080028e8        0x0 linker stubs
+.vfp11_veneer   0x08002904        0x0
+ .vfp11_veneer  0x08002904        0x0 linker stubs
 
-.v4_bx          0x080028e8        0x0
- .v4_bx         0x080028e8        0x0 linker stubs
+.v4_bx          0x08002904        0x0
+ .v4_bx         0x08002904        0x0 linker stubs
 
-.iplt           0x080028e8        0x0
- .iplt          0x080028e8        0x0 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08002904        0x0
+ .iplt          0x08002904        0x0 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080028e8       0xb4
-                0x080028e8                        . = ALIGN (0x4)
+.rodata         0x08002904       0xb4
+                0x08002904                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.APBPrescTable
-                0x080028e8        0x8 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Core/Src/system_stm32f4xx.c.obj
-                0x080028e8                APBPrescTable
+                0x08002904        0x8 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Core/Src/system_stm32f4xx.c.obj
+                0x08002904                APBPrescTable
  .rodata.AHBPrescTable
-                0x080028f0       0x10 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Core/Src/system_stm32f4xx.c.obj
-                0x080028f0                AHBPrescTable
+                0x0800290c       0x10 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Core/Src/system_stm32f4xx.c.obj
+                0x0800290c                AHBPrescTable
  .rodata.diagnostic_parameters
-                0x08002900        0x8 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
+                0x0800291c        0x8 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
  .rodata.k_limits
-                0x08002908       0x8c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
+                0x08002924       0x8c CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/App/Src/robstride.c.obj
  .rodata.flagBitshiftOffset.0
-                0x08002994        0x8 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x0800299c                        . = ALIGN (0x4)
+                0x080029b0        0x8 CMakeFiles/RobStride_Motor_Test.elf.dir/D_/Challenge_Cup/MainCode/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x080029b8                        . = ALIGN (0x4)
 
-.ARM.extab      0x0800299c        0x0
-                0x0800299c                        . = ALIGN (0x4)
+.ARM.extab      0x080029b8        0x0
+                0x080029b8                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0800299c                        . = ALIGN (0x4)
+                0x080029b8                        . = ALIGN (0x4)
 
-.ARM            0x0800299c        0x8
-                0x0800299c                        . = ALIGN (0x4)
-                0x0800299c                        __exidx_start = .
+.ARM            0x080029b8        0x8
+                0x080029b8                        . = ALIGN (0x4)
+                0x080029b8                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0800299c        0x8 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x080029a4                        __exidx_end = .
-                0x080029a4                        . = ALIGN (0x4)
+ .ARM.exidx     0x080029b8        0x8 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x080029c0                        __exidx_end = .
+                0x080029c0                        . = ALIGN (0x4)
 
-.preinit_array  0x080029a4        0x0
-                0x080029a4                        . = ALIGN (0x4)
-                0x080029a4                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080029c0        0x0
+                0x080029c0                        . = ALIGN (0x4)
+                0x080029c0                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080029a4                        PROVIDE (__preinit_array_end = .)
-                0x080029a4                        . = ALIGN (0x4)
+                0x080029c0                        PROVIDE (__preinit_array_end = .)
+                0x080029c0                        . = ALIGN (0x4)
 
-.init_array     0x080029a4        0x4
-                0x080029a4                        . = ALIGN (0x4)
-                0x080029a4                        PROVIDE (__init_array_start = .)
+.init_array     0x080029c0        0x4
+                0x080029c0                        . = ALIGN (0x4)
+                0x080029c0                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x080029a4        0x4 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x080029a8                        PROVIDE (__init_array_end = .)
-                0x080029a8                        . = ALIGN (0x4)
+ .init_array    0x080029c0        0x4 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080029c4                        PROVIDE (__init_array_end = .)
+                0x080029c4                        . = ALIGN (0x4)
 
-.fini_array     0x080029a8        0x4
-                0x080029a8                        . = ALIGN (0x4)
+.fini_array     0x080029c4        0x4
+                0x080029c4                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080029a8        0x4 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x080029c4        0x4 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x080029ac                        . = ALIGN (0x4)
-                0x080029ac                        _sidata = LOADADDR (.data)
+                0x080029c8                        . = ALIGN (0x4)
+                0x080029c8                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x080029ac        0x0
- .rel.iplt      0x080029ac        0x0 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x080029c8        0x0
+ .rel.iplt      0x080029c8        0x0 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000        0xc load address 0x080029ac
+.data           0x20000000        0xc load address 0x080029c8
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -1410,12 +1412,12 @@ LOAD C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  *(.RamFunc*)
                 0x2000000c                        . = ALIGN (0x4)
                 0x2000000c                        _edata = .
-                0x080029b8                        _siccmram = LOADADDR (.ccmram)
+                0x080029d4                        _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x2000000c        0x0 load address 0x080029b8
+.igot.plt       0x2000000c        0x0 load address 0x080029d4
  .igot.plt      0x2000000c        0x0 C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x080029b8
+.ccmram         0x10000000        0x0 load address 0x080029d4
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmram = .
  *(.ccmram)
@@ -1457,19 +1459,22 @@ LOAD C:/ST/STM32CubeCLT_1.22.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .bss.g_robstride_test_failed
                 0x20000179        0x1 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
                 0x20000179                g_robstride_test_failed
- .bss.g_robstride_feedback_valid
+ .bss.g_robstride_position_valid
                 0x2000017a        0x1 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
-                0x2000017a                g_robstride_feedback_valid
- .bss.g_robstride_parameter_success
+                0x2000017a                g_robstride_position_valid
+ .bss.g_robstride_feedback_valid
                 0x2000017b        0x1 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
-                0x2000017b                g_robstride_parameter_success
- .bss.g_robstride_fault_bits
+                0x2000017b                g_robstride_feedback_valid
+ .bss.g_robstride_parameter_success
                 0x2000017c        0x1 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
-                0x2000017c                g_robstride_fault_bits
- .bss.g_robstride_mode_state
+                0x2000017c                g_robstride_parameter_success
+ .bss.g_robstride_fault_bits
                 0x2000017d        0x1 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
-                0x2000017d                g_robstride_mode_state
- *fill*         0x2000017e        0x2 
+                0x2000017d                g_robstride_fault_bits
+ .bss.g_robstride_mode_state
+                0x2000017e        0x1 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
+                0x2000017e                g_robstride_mode_state
+ *fill*         0x2000017f        0x1 
  .bss.g_robstride_current_limit_a
                 0x20000180        0x4 CMakeFiles/RobStride_Motor_Test.elf.dir/Src/main.c.obj
                 0x20000180                g_robstride_current_limit_a

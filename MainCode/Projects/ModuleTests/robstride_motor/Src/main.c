@@ -20,6 +20,7 @@ volatile uint16_t g_robstride_last_parameter_index;
 volatile uint32_t g_robstride_last_parameter_raw;
 volatile float g_robstride_last_parameter_value;
 volatile float g_robstride_position_rad;
+volatile float g_robstride_target_position_rad;
 volatile float g_robstride_velocity_rad_s;
 volatile float g_robstride_torque_nm;
 volatile float g_robstride_temperature_c;
@@ -28,6 +29,7 @@ volatile uint8_t g_robstride_mode_state;
 volatile uint8_t g_robstride_fault_bits;
 volatile uint8_t g_robstride_parameter_success;
 volatile uint8_t g_robstride_feedback_valid;
+volatile uint8_t g_robstride_position_valid;
 volatile uint8_t g_robstride_test_failed;
 volatile uint8_t g_robstride_motion_phase;
 
@@ -38,8 +40,10 @@ typedef enum {
   MOTION_ZERO_CURRENT,
   MOTION_ENABLE,
   MOTION_SETTLE,
-  MOTION_APPLY_CURRENT,
-  MOTION_HOLD,
+  MOTION_SET_PROFILE_SPEED,
+  MOTION_SET_POSITION_TARGET,
+  MOTION_SET_POSITION_MODE,
+  MOTION_WAIT_POSITION,
   MOTION_ZERO_AFTER_TEST,
   MOTION_STOP,
   MOTION_DONE
@@ -55,6 +59,7 @@ static uint32_t last_diagnostic_ms;
 static uint8_t diagnostic_cursor;
 #if ROBSTRIDE_TEST_ENABLE_MOTION
 static uint32_t phase_deadline_ms;
+static uint32_t position_reached_since_ms;
 
 static bool time_reached(uint32_t now_ms, uint32_t deadline_ms) {
   return (int32_t)(now_ms - deadline_ms) >= 0;
@@ -106,6 +111,22 @@ static bool write_current(float current_a) {
          transmit(&frame);
 }
 
+static bool write_run_mode(RobStrideRunMode mode) {
+  CanFrame frame;
+  return robstride_make_write_parameter_u8(
+             ROBSTRIDE_TEST_MOTOR_ID, ROBSTRIDE_TEST_MASTER_ID,
+             ROBSTRIDE_PARAM_RUN_MODE, (uint8_t)mode, &frame) &&
+         transmit(&frame);
+}
+
+static bool write_parameter_f32(uint16_t index, float value) {
+  CanFrame frame;
+  return robstride_make_write_parameter_f32(
+             ROBSTRIDE_TEST_MOTOR_ID, ROBSTRIDE_TEST_MASTER_ID, index, value,
+             &frame) &&
+         transmit(&frame);
+}
+
 static void motion_poll(uint32_t now_ms) {
   CanFrame frame;
   MotionPhase phase = (MotionPhase)g_robstride_motion_phase;
@@ -115,14 +136,25 @@ static void motion_poll(uint32_t now_ms) {
     next_phase(MOTION_ZERO_AFTER_TEST, now_ms, 0U);
     phase = MOTION_ZERO_AFTER_TEST;
   }
-  if (!time_reached(now_ms, phase_deadline_ms)) {
+  if (phase != MOTION_WAIT_POSITION &&
+      !time_reached(now_ms, phase_deadline_ms)) {
     return;
   }
 
   switch (phase) {
     case MOTION_WAIT_FEEDBACK:
-      if (g_robstride_rx_count == 0U || now_ms < 1000U) {
+      if (g_robstride_rx_count == 0U || g_robstride_position_valid == 0U ||
+          now_ms < 1000U) {
         return;
+      }
+      g_robstride_target_position_rad =
+          g_robstride_position_rad + ROBSTRIDE_TEST_ROTATION_RAD;
+      if (g_robstride_target_position_rad < -ROBSTRIDE_POSITION_LIMIT_RAD ||
+          g_robstride_target_position_rad > ROBSTRIDE_POSITION_LIMIT_RAD) {
+        g_robstride_test_failed = 1U;
+        standalone_set_fault(true);
+        next_phase(MOTION_ZERO_AFTER_TEST, now_ms, 0U);
+        break;
       }
       next_phase(MOTION_CLEAR_FAULT, now_ms, 0U);
       break;
@@ -135,10 +167,7 @@ static void motion_poll(uint32_t now_ms) {
       }
       break;
     case MOTION_SET_CURRENT_MODE:
-      if (robstride_make_write_parameter_u8(
-              ROBSTRIDE_TEST_MOTOR_ID, ROBSTRIDE_TEST_MASTER_ID,
-              ROBSTRIDE_PARAM_RUN_MODE, ROBSTRIDE_RUN_CURRENT, &frame) &&
-          transmit(&frame)) {
+      if (write_run_mode(ROBSTRIDE_RUN_CURRENT)) {
         next_phase(MOTION_ZERO_CURRENT, now_ms,
                    ROBSTRIDE_TEST_COMMAND_STEP_MS);
       }
@@ -163,18 +192,55 @@ static void motion_poll(uint32_t now_ms) {
         standalone_set_fault(true);
         next_phase(MOTION_ZERO_AFTER_TEST, now_ms, 0U);
       } else {
-        next_phase(MOTION_APPLY_CURRENT, now_ms, 0U);
+        next_phase(MOTION_SET_PROFILE_SPEED, now_ms, 0U);
       }
       break;
-    case MOTION_APPLY_CURRENT:
-      if (write_current(ROBSTRIDE_TEST_CURRENT_A)) {
-        next_phase(MOTION_HOLD, now_ms, ROBSTRIDE_TEST_HOLD_MS);
+    case MOTION_SET_PROFILE_SPEED:
+      if (write_parameter_f32(ROBSTRIDE_PARAM_PROFILE_SPEED,
+                              ROBSTRIDE_TEST_PROFILE_SPEED_RAD_S)) {
+        next_phase(MOTION_SET_POSITION_TARGET, now_ms,
+                   ROBSTRIDE_TEST_COMMAND_STEP_MS);
       }
       break;
-    case MOTION_HOLD:
-      next_phase(MOTION_ZERO_AFTER_TEST, now_ms, 0U);
+    case MOTION_SET_POSITION_TARGET:
+      if (write_parameter_f32(ROBSTRIDE_PARAM_POSITION_REF,
+                              g_robstride_target_position_rad)) {
+        next_phase(MOTION_SET_POSITION_MODE, now_ms,
+                   ROBSTRIDE_TEST_COMMAND_STEP_MS);
+      }
       break;
+    case MOTION_SET_POSITION_MODE:
+      if (write_run_mode(ROBSTRIDE_RUN_POSITION)) {
+        position_reached_since_ms = 0U;
+        next_phase(MOTION_WAIT_POSITION, now_ms,
+                   ROBSTRIDE_TEST_MOTION_TIMEOUT_MS);
+      }
+      break;
+    case MOTION_WAIT_POSITION: {
+      float position_error =
+          fabsf(g_robstride_target_position_rad - g_robstride_position_rad);
+      if (time_reached(now_ms, phase_deadline_ms) ||
+          g_robstride_feedback_valid == 0U ||
+          g_robstride_fault_bits != 0U ||
+          (uint32_t)(now_ms - g_robstride_last_feedback_ms) > 250U) {
+        g_robstride_test_failed = 1U;
+        standalone_set_fault(true);
+        next_phase(MOTION_ZERO_AFTER_TEST, now_ms, 0U);
+      } else if (position_error <= ROBSTRIDE_TEST_POSITION_TOLERANCE_RAD) {
+        if (position_reached_since_ms == 0U) {
+          position_reached_since_ms = now_ms;
+        } else if ((uint32_t)(now_ms - position_reached_since_ms) >=
+                   ROBSTRIDE_TEST_POSITION_SETTLE_MS) {
+          next_phase(MOTION_ZERO_AFTER_TEST, now_ms, 0U);
+        }
+      } else {
+        position_reached_since_ms = 0U;
+      }
+      break;
+    }
     case MOTION_ZERO_AFTER_TEST:
+      /* Drop the position loop before zeroing current and stopping. */
+      (void)write_run_mode(ROBSTRIDE_RUN_CURRENT);
       (void)write_current(0.0F);
       next_phase(MOTION_STOP, now_ms, ROBSTRIDE_TEST_COMMAND_STEP_MS);
       break;
@@ -213,6 +279,7 @@ void app_bridge_on_can_frame(uint8_t bus, const CanFrame *frame,
     g_robstride_fault_bits = feedback.fault_bits;
     g_robstride_last_feedback_ms = now_ms;
     g_robstride_feedback_valid = 1U;
+    g_robstride_position_valid = 1U;
   } else if (robstride_parse_parameter_reply(ROBSTRIDE_TEST_MASTER_ID, frame,
                                               &parameter) &&
              parameter.motor_id == ROBSTRIDE_TEST_MOTOR_ID) {
@@ -220,6 +287,10 @@ void app_bridge_on_can_frame(uint8_t bus, const CanFrame *frame,
     g_robstride_last_parameter_raw = parameter.raw_value;
     g_robstride_last_parameter_value = parameter.float_value;
     g_robstride_parameter_success = parameter.success ? 1U : 0U;
+    if (parameter.success && parameter.index == ROBSTRIDE_PARAM_POSITION) {
+      g_robstride_position_rad = parameter.float_value;
+      g_robstride_position_valid = 1U;
+    }
     if (!parameter.success) {
       g_robstride_test_failed = 1U;
       standalone_set_fault(true);
@@ -257,8 +328,12 @@ int main(void) {
   g_robstride_current_limit_a = limits->current_a;
 
 #if ROBSTRIDE_TEST_ENABLE_MOTION
-  if (!isfinite(ROBSTRIDE_TEST_CURRENT_A) ||
-      fabsf(ROBSTRIDE_TEST_CURRENT_A) > limits->current_a) {
+  if (!isfinite(ROBSTRIDE_TEST_ROTATION_RAD) ||
+      !isfinite(ROBSTRIDE_TEST_PROFILE_SPEED_RAD_S) ||
+      ROBSTRIDE_TEST_PROFILE_SPEED_RAD_S <= 0.0F ||
+      ROBSTRIDE_TEST_PROFILE_SPEED_RAD_S > limits->velocity_rad_s ||
+      fabsf(ROBSTRIDE_TEST_ROTATION_RAD) >
+          (2.0F * ROBSTRIDE_POSITION_LIMIT_RAD)) {
     Error_Handler();
   }
   g_robstride_motion_phase = (uint8_t)MOTION_WAIT_FEEDBACK;

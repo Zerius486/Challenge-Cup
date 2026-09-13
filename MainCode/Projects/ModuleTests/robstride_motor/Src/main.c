@@ -319,7 +319,7 @@ void app_bridge_on_can_error(uint8_t bus, uint32_t error) {
 
 int main(void) {
   const RobStrideLimits *limits;
-  standalone_runtime_init(BOARD_PERIPHERAL_CAN2);
+  standalone_runtime_init(BOARD_PERIPHERAL_CAN1);
   limits = robstride_limits((RobStrideModel)ROBSTRIDE_TEST_MODEL);
   if (limits == NULL || ROBSTRIDE_TEST_MOTOR_ID == 0U ||
       ROBSTRIDE_TEST_MOTOR_ID > 127U) {

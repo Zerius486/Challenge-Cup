@@ -1,12 +1,12 @@
 # RobStride 单电机测试工程
 
-本工程只验证 CAN2 上的一台灵足时代 RobStride 电机。默认固件不使能电机，每 200 ms 轮询一个参数，依次读取 position、speed、Iq 和 bus voltage。
+本工程只验证 CAN1 上的一台灵足时代 RobStride 电机。默认固件不使能电机，每 200 ms 轮询一个参数，依次读取 position、speed、Iq 和 bus voltage。
 
 协议实现来自灵足时代官方产品资料库和官方 STM32 示例，支持 RS00 到 RS06；电机必须预先配置为私有协议和 1 Mbit/s。
 
 ## 接线
 
-- CAN2：PB12 RX、PB13 TX，1 Mbit/s
+- CAN1：PD0 RX、PD1 TX，1 Mbit/s；接开发板 P6 的 CAN1_H/CAN1_L
 - CANH/CANL 和信号地对应连接，动力电源独立供电
 - 断电核对终端电阻；首次动作保持无负载并准备硬件急停
 

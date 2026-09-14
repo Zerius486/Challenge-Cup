@@ -4,6 +4,17 @@
 *.py[cod]
 *.pdb
 
+# CMake/firmware build outputs
+MainCode/build/
+MainCode/output/
+MainCode/Middlewares/Third_Party/LwIP/doc/doxygen/output/
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.log
+
 # Keil/MDK generated output in the retained board examples
 Reference/Board/Examples/**/Project/OBJ/
 Reference/Board/Examples/**/Project/LIST/
